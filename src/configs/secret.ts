@@ -1,4 +1,4 @@
 export namespace Secret {
-  export const code = 'supersecret';
-  export const codeAdmin = 'adminsecret';
+  export const code = 'sup3rsecret';
+  export const codeAdmin = '@dminsecret';
 }

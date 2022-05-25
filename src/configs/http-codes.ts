@@ -1,6 +1,10 @@
-export namespace HTTP_CODES {
-  export const SUCCESS = 200;
-  export const CLIENT_ERROR = 400;
-  export const SERVER_ERROR = 500;
-  export const ACCESS_DENIED = 401;
-}
+const HTTP_CODES = {
+  SUCCESS: 200,
+  CREATED: 201,
+  CLIENT_ERROR: 400,
+  SERVER_ERROR: 500,
+  ACCESS_DENIED: 401,
+  FORBIDDEN: 403,
+};
+
+export default HTTP_CODES;
