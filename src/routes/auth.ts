@@ -14,6 +14,6 @@ export class AuthRoute {
 
   public routes(): void {
     this.router.get('/hello', this.authController.hello);
-    this.router.post('/', validationMiddleware(CreateUserDto), this.authController.registration);
+    this.router.post('/', validationMiddleware(CreateUserDto, 'create_user'), this.authController.registration);
   }
 }
