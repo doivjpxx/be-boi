@@ -5,10 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "env-cmd -f .env.dev nodemon ./src/server.ts",
     "start": "ts-node ./dist/server.js",
-    "prod": "npm run build && npm run start",
-    "lint": "tslint src/**/*.ts"
+    "start:dev": "env-cmd -f .env.dev nodemon ./src/server.ts",
+    "start:stg": "env-cmd -f .env.stg nodemon ./src/server.ts",
+    "build:dev": "env-cmd -f .env.dev npm run build",
+    "build:stg": "env-cmd -f .env.stg npm run build",
+    "build:prod": "env-cmd -f .env.prod npm run build",
+    "lint": "tslint src/**/*.ts",
+    "format": "prettier --write \"**/*.{js,ts,json,md}\""
   },
   "author": "",
   "license": "ISC",
