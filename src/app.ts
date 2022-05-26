@@ -7,7 +7,6 @@ import * as logger from 'morgan';
 import * as path from 'path';
 import * as fs from 'fs';
 import { MongoError } from 'mongodb';
-import { DB } from './configs/def';
 import { RootRouter } from './routes/index';
 import helmet from 'helmet';
 import errorMiddleware from './middlewares/error.middleware';

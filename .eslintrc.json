@@ -4,7 +4,13 @@
     "es6": true,
     "node": true
   },
-  "extends": ["prettier", "airbnb-base"],
+  "extends": [
+    "prettier",
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "plugins": ["prettier"],
   "globals": {
     "Atomics": "readonly",

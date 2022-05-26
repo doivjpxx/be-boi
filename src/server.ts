@@ -1,5 +1,4 @@
 import app from './app';
-import { SERVER } from './configs/def';
 import { configure } from 'log4js';
 
 configure({
@@ -17,6 +16,6 @@ configure({
   },
 });
 
-app.listen(SERVER.PORT, () => {
-  console.log('Express server listening on port ' + SERVER.PORT);
+app.listen(process.env.PORT, () => {
+  console.log('Express server listening on port ' + process.env.PORT);
 });
