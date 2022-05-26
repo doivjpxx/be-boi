@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { logger } from '../helpers/logger.helper';
-import { signup } from '../services/authentication.service';
+import { signup } from '../services/auth.service';
 
 export class AuthController {
   static _name = 'authController';

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node ./dist/server.js",
+    "start": "env-cmd -f .env.prod node ./dist/server.js",
     "start:dev": "env-cmd -f .env.dev nodemon ./src/server.ts",
     "start:stg": "env-cmd -f .env.staging nodemon ./src/server.ts",
     "build:dev": "env-cmd -f .env.dev npm run build",
@@ -38,7 +38,6 @@
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/jsonwebtoken": "^8.5.8",
-    "@types/mongoose": "^5.11.97",
     "@types/morgan": "^1.9.3",
     "env-cmd": "^10.1.0",
     "eslint-config-prettier": "^8.5.0",
