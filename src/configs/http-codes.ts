@@ -5,6 +5,7 @@ const HTTP_CODES = {
   SERVER_ERROR: 500,
   ACCESS_DENIED: 401,
   FORBIDDEN: 403,
+  NOT_FOUND: 404,
 };
 
 export default HTTP_CODES;

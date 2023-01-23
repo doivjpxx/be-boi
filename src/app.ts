@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
+import * as cookieParser from 'cookie-parser';
 import * as mongoose from 'mongoose';
 import * as bluebird from 'bluebird';
 import * as cors from 'cors';
@@ -7,7 +8,7 @@ import * as logger from 'morgan';
 import * as path from 'path';
 import * as fs from 'fs';
 import { MongoError } from 'mongodb';
-import { RootRouter } from './routes/index';
+import { RootRouter } from './routes';
 import helmet from 'helmet';
 import errorMiddleware from './middlewares/error.middleware';
 
@@ -52,6 +53,9 @@ class App {
     this.app.use(bodyParser.json());
     this.app.use(bodyParser.urlencoded({ extended: false }));
 
+    // parse cookies
+    this.app.use(cookieParser());
+
     // assets folder
     this.app.use(express.static(path.join(__dirname, '../public')));
 
@@ -69,6 +73,9 @@ class App {
 
   private _mongoSetup(): void {
     (mongoose as mongoose.Mongoose).Promise = bluebird;
+    mongoose.set('useCreateIndex', true);
+    mongoose.set('useUnifiedTopology', true);
+    mongoose.set('useNewUrlParser', true);
     mongoose
       .connect(this.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
       .then(() => console.log('Connected DB: ' + this.mongoUrl))
